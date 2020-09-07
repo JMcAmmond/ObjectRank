@@ -7,8 +7,7 @@ describe('objectByString', () => {
     expect(objectByString({ test: { nested: expected } }, 'test.nested')).toBe(expected);
   });
 
-  it('should return null if object path cannot be found', () => {
-    const expected = 'the expected value';
-    expect(objectByString({ test: expected }, 'badPath')).toBeNull();
+  it('should return null if object path cannot be resolved', () => {
+    expect(objectByString({ test: 'it doesnt matter' }, 'badPath')).toBeNull();
   });
 });

@@ -2,7 +2,7 @@ import { ComparisionOperator } from '../../enums/ComparisonOperator';
 import { comparison } from '../comparisonHelpers';
 
 describe('Comparision', () => {
-  it('should pass comparisions are valid', () => {
+  it('should be valid comparisions', () => {
     expect(comparison[ComparisionOperator.Equal](1, 1)).toBeTruthy();
     expect(comparison[ComparisionOperator.NotEqual](1, 2)).toBeTruthy();
     expect(comparison[ComparisionOperator.GreaterThan](2, 1)).toBeTruthy();
@@ -13,7 +13,7 @@ describe('Comparision', () => {
     expect(comparison[ComparisionOperator.LessThanOrEqual](2, 2)).toBeTruthy();
   });
 
-  it('should fail when comparisions are invalid', () => {
+  it('should be invalid comparisions', () => {
     expect(comparison[ComparisionOperator.Equal]('equal', 'not equal')).toBeFalsy();
     expect(comparison[ComparisionOperator.NotEqual]('equal', 'equal')).toBeFalsy();
     expect(comparison[ComparisionOperator.GreaterThan](4, 100)).toBeFalsy();

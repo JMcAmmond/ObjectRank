@@ -24,10 +24,10 @@ const defaultOptions = {
   autoSort: true,
 };
 
-const ArrayRank = (arr: Array<Object>, ruleSet: Array<IRuleSetItems>, opt?: IArrayRankOptions): Array<any | IRank> => {
+const Rank = (arr: Array<any>, ruleSet: Array<IRuleSetItems>, opt?: IArrayRankOptions): Array<IRank | any> => {
   const options = { ...defaultOptions, ...opt };
   const rankedResults: Array<IRank> = [];
-  let toReturn;
+  let toReturn: Array<IRank>;
 
   arr.forEach((item) => {
     const itemRank: IRank = { data: item, matches: 0 };
@@ -49,4 +49,4 @@ const ArrayRank = (arr: Array<Object>, ruleSet: Array<IRuleSetItems>, opt?: IArr
   return toReturn;
 };
 
-export default ArrayRank;
+export default Rank;
