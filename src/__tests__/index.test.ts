@@ -1,3 +1,4 @@
+//test
 import Rank from '../index';
 
 describe('Rank', () => {
